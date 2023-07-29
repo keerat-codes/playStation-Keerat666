@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const playStationVersionsRoute = require('./routes/playStationVersions');
+app.use('/playStationVersions', playStationVersionsRoute);
 
 const conn = require('./middlewares/connection');
 console.log("Trying to establish a connection to TiDB...");
