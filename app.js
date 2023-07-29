@@ -9,6 +9,8 @@ require('dotenv').config();
 app.use(cors())
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+const ps2Games  = require('./controllers/ps2Games');
+app.use('/controller', ps2Games);
 const playStationVersionsRoute = require('./routes/playStationVersions');
 app.use('/playStationVersions', playStationVersionsRoute);
 
